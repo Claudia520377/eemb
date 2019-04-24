@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/profile/profile",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/product/product",
+    "pages/cart/cart",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/product_Bicycle/product_Bicycle",
+    "pages/conversioncoupon/conversioncoupon",
+    "pages/receivecoupon/receivecoupon",
+    "pages/mycoupon/mycoupon",
+    "pages/favorite/favorite",
+    "pages/footprint/footprint",
+    "pages/recharge/recharge",
+    "pages/address/address",
+    "pages/InformationSettings/InformationSettings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "EEMB",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#ee523d",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabs/home.png",
+        "selectedIconPath": "assets/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/tabs/cart.png",
+        "selectedIconPath": "assets/tabs/cart-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "会员中心",
+        "iconPath": "assets/tabs/profile.png",
+        "selectedIconPath": "assets/tabs/profile-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

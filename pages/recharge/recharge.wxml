@@ -1,0 +1,7 @@
+<!--pages/Recharge/Recharge.wxml-->
+
+<view class='nomorebox clearfix'>
+  <view class='nomoreline nomorelineleft'></view>
+  <text>没有数据</text>
+  <view class='nomoreline nomorelineright'></view>
+</view>

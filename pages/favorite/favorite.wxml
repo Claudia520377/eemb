@@ -1,0 +1,7 @@
+<!--pages/favorite/favorite.wxml-->
+
+<view class='nomorebox clearfix'>
+  <view class='nomoreline nomorelineleft'></view>
+  <text>没有更多了</text>
+  <view class='nomoreline nomorelineright'></view>
+</view>

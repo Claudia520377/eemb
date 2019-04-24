@@ -1,0 +1,59 @@
+
+<view class="container">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <view v-if="{{true}}">
+                  <view class='gotoshop'>赶紧去领劵中心看看更多优惠商品</view>
+                  <view class='couponlist'>
+                    <image src='/assets/coupon1.png' wx:for="{{mycoupon}}" wx:key="{{index}}"></image>
+                  </view>
+                  <view class='nomorebox '>
+                    <view class='nomoreline nomorelineleft'></view>
+                    <text>暂时没有任何商品</text>
+                    <view class='nomoreline nomorelineright'></view>
+                  </view>
+                </view>
+                  
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view v-if="{{true}}">
+                    <view class='gotoshop'>赶紧去领劵中心看看更多优惠商品</view>
+                    <view class='couponlist'>
+                      <image src='/assets/coupon1.png'></image>
+                      <image src='/assets/coupon1.png'></image>
+                    </view>
+                    <view class='nomorebox '>
+                      <view class='nomoreline nomorelineleft'></view>
+                      <text>暂时没有任何商品</text>
+                      <view class='nomoreline nomorelineright'></view>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <view v-if="{{true}}">
+                    <view class='gotoshop'>赶紧去领劵中心看看更多优惠商品</view>
+                    <view class='couponlist'>
+                      <image src='/assets/coupon1.png'></image>
+                      <image src='/assets/coupon1.png'></image>
+                    </view>
+                    <view class='nomorebox '>
+                      <view class='nomoreline nomorelineleft'></view>
+                      <text>暂时没有任何商品</text>
+                      <view class='nomoreline nomorelineright'></view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

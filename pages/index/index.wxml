@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<!--搜索框-->
+<include src="/includes/search-bar.wxml"/>
+
+<view class="zixinche">
+  <navigator  target="" url="/pages/product_Bicycle/product_Bicycle">
+    <image src="http://eemb.cn/assets/images/zixinche.jpg" class="zixinche_img"/>
+  </navigator>
+</view> 
+  
+  <!--九宫格-->
+<view class="grids">
+  <navigator class="item"  wx:for="{{productList.product}}" wx:key="" target="" url="{{item.url}}?name={{item.name}}">
+      <image src="{{item.image}}"/>
+      <text>{{item.name}}</text>
+  </navigator>
+
+</view>
+    <!--分隔块-->
+    <navigator  wx:for="{{hot}}" wx:key="" url="{{item.url}}">
+        <view class="hot_img">
+            <image src="{{item.image}}" />
+    </view>
+    </navigator>
+      
+
+
+
+  <!--按钮-->

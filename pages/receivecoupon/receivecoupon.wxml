@@ -1,0 +1,15 @@
+<view>
+  <view class='mycoupon'><text >  全部优惠券</text></view>
+  <view class='couponbox'>
+    <view class='couponlist'>
+      <navigator url="" wx:for="{{coupon}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class='nomorebox clearfix'>
+   <view class='nomoreline nomorelineleft'></view>
+   <text>没有更多了</text>
+   <view class='nomoreline nomorelineright'></view>
+  </view>
+</view>

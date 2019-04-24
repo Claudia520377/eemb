@@ -1,0 +1,30 @@
+<view class="coutainer">
+    <view class="addresslist">
+        <view class="addressItem" wx:for="{{addressList}}" wx:key="{{index}}">
+            <view class="addressInfo">
+                <view class="address-cells">
+                    <text class="username">{{item.name}}</text>
+                    <text>{{item.telephone}}</text>
+                </view>
+                <text>{{item.address}}</text>
+            </view>
+            <view class="edtailBtn">
+                <view class="edtailBtnLeft">
+                    <icon wx:if="{{item.isdefault}}" type="success" size="23" color="#ff5555" bindtap="changeaddress" data-index="{{index}}"></icon>
+                    <icon wx:else type="circle" size="23" bindtap="changeaddress" data-index="{{index}}"></icon>
+                    <text>设为默认地址</text>
+                </view>
+                <view class="edtailBtnRight">
+                    <image  src="/assets/edtail.png"/>
+                    <text>编辑</text>
+                    <text bindtap="deleteaddress">删除</text>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+    <view class="addAddress">
+        +添加收货地址
+    </view>
+
+</view>  

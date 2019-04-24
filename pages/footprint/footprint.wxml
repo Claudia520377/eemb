@@ -1,0 +1,21 @@
+<!-- <view class="weui-cells weui-cells_after-title"> -->
+
+<!-- </view> -->
+<view class='footprintlist'>
+  <navigator url=""  hover-class="weui-cell_active" class='footprintitem'>
+    <view class="weui-cell weui-cell_access" >
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/assets/images/eemb.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">eemb</view>
+      <view class="weui-cell__ft">2019-03-20:10:56:00</view>
+    </view>
+    <view class='itemlist'>
+      <image src='/assets/nav_01.png'></image>
+      <view class='dedaile'>
+        <text class='model'>口红充电宝</text>
+        <text class='price'>￥49.9</text>
+      </view>
+    </view>
+  </navigator>
+</view>

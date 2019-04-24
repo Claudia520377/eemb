@@ -1,0 +1,55 @@
+/**index.wxss**/
+
+/* 轮播图的高度
+.slides{
+height: 350rpx;
+}
+/*轮播图图片的高宽*/
+/* .slides image{
+  width: 100%;
+  height: 100%;
+} */ 
+
+/*首页自行车图片*/
+.zixinche{
+  width: 100%;
+  height:400rpx;
+}
+.zixinche_img{
+  width: 100%;
+  height:400rpx;
+} 
+/*flex布局*/
+.grids{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f4f2;
+  justify-content:space-around;
+  font-size: 28rpx;
+}
+.grids .item{
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+width: 170rpx;
+height: 180rpx;
+}
+.grids .item image{
+width: 160rpx;
+height: 180rpx;
+}
+.grid .item text{
+  display: block;
+}
+  /*hot榜商品*/
+  .hot_img{
+    width: 100%;
+    height: 500rpx;
+    border-bottom: 15rpx solid #f2f2f2;
+  }
+.hot_img image{
+  width: 100%;
+  height:100%;
+}
+

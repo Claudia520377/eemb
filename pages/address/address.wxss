@@ -1,0 +1,59 @@
+.addressItem {
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+.username {
+    margin-right: 20rpx;
+}
+.addressInfo {
+    border-bottom:1rpx solid #d9d9d9;
+}
+.edtailBtnRight >image{
+    height: 30rpx;
+    width: 30rpx;
+}
+.edtailBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80rpx;
+}
+.edtailBtnLeft {
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+}
+.edtailBtnLeft >text{
+    margin-left: 10rpx;
+}
+.edtailBtnRight {
+    display: flex;
+    align-items: center;
+}
+.edtailBtnRight > text{
+    margin-right: 20rpx;
+}
+.edtailBtnRight>image{
+    margin-right: 5rpx;
+}
+.addAddress{
+    position: fixed;
+    bottom:0rpx;
+    width: 750rpx;
+    height: 100rpx;
+    background-color: #ff5555;
+    color:#fff;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 30rpx;
+}
+page {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    font-size: 28rpx;
+    color: #666;
+  }

@@ -1,0 +1,368 @@
+/* pages/detail/detail.wxss */
+/*轮播图的高度*/
+.slides{
+    height: 350rpx;
+    }
+    /*轮播图图片的高宽*/
+    .slides image{
+      width: 100%;
+      height: 100%;
+    }
+
+    /*产品信息样式*/
+    .message{
+      margin-top: 40rpx;
+      margin-left: 20rpx;
+    }
+    /*产品编号*/
+    .name{
+   font-size: 40rpx;
+    }
+    /*产品详情*/
+    .details{
+      font-size: 30rpx;
+      color: #848484;
+    }
+    /*产品价格*/
+    .price{
+      font-size: 54rpx;
+      color: red;
+    }
+    /*是否包邮*/
+    .mode{
+      font-size: 28rpx;
+      color: #a4a4a4;
+    }
+    /*销量*/
+    .sales{
+      float: right;
+      margin-right: 20rpx;
+    }
+    /*分割线*/
+    .hr{
+      height: 25rpx;
+      width: 100%;
+      background-color: #f2f2f2;
+      margin-top: 15rpx;
+    }
+    /*优惠券*/
+    .span1{
+      font-size: 30rpx;
+      color: #2f2f2f;
+    }
+    .coupons_p{
+      display:inline-block;
+      width: 88rpx;
+      height: 36rpx;
+      line-height: 36rpx;
+      background-color: #ff4e51;
+      color: #fff;
+      text-align: center;
+      margin-left: 10rpx;
+    }
+.span1{
+  margin: 25rpx 0 25rpx 20rpx;
+}
+.img_right{
+  height:36rpx;
+  line-height:36rpx;
+  width: 36rpx;
+  float:right;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+   /*分割线1*/
+   .hr1{
+    height: 5rpx;
+    width: 100%;
+    background-color: #f2f2f2;
+    margin-top: 15rpx;
+  }
+  /*活动*/
+  .span2{
+    margin: 20rpx 0 20rpx 20rpx;
+  }
+  .activity{
+    font-size: 34rpx;
+  }
+  .integral{
+    padding: 2rpx 10rpx;
+    font-size: 24rpx;
+    border: 3rpx solid #ff667e;
+    color: #ff667e;
+    margin-left: 40rpx;
+  }
+.discount{
+  font-size: 26rpx;
+  color: #737373;
+  letter-spacing:3rpx;
+}
+/*不配送区域*/
+.span3{
+  margin: 20rpx 0 20rpx 20rpx;
+font-size: 28rpx;
+color: #737373;
+}
+/*正品保证*/
+.span4{
+  font-size: 24rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fafafa;
+}
+.span4 image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+    /*分割线*/
+    .hr2{
+      height: 25rpx;
+      width: 100%;
+      background-color: #f2f2f2;
+    }
+/*请选择数量*/
+.span5{
+  margin: 25rpx 0 25rpx 20rpx;
+  font-size: 34rpx;
+}
+.number{
+  margin-left: 20rpx;
+}
+
+/*官方旗舰店*/
+.span6{
+ height: 130rpx;
+ line-height: 130rpx;
+ display: flex;
+ align-items:center;
+}
+
+.img_eemb{
+  width: 100rpx;
+  height: 90rpx;
+margin: 20rpx 20rpx;
+}
+.eemb_shop{
+font-size: 34rpx;
+
+}
+.official{
+  background-color: #ff4d55;
+  color: #fff;
+  height: 38rpx;
+  width: 50rpx;
+  font-size: 30rpx;
+  padding: 5rpx 12rpx;
+  margin-left: 10rpx;
+
+}
+
+/*swiper-tab*/
+/**index.wxss**/  
+
+.swiper-tab,.swiper-tab1{  
+
+  width: 100%;  
+
+  border-bottom: 25rpx solid #f2f2f2;  
+
+  text-align: center;  
+
+  line-height: 80rpx;}  
+
+.swiper-tab1{  
+    width: 100%;  
+  
+    border-bottom: 10rpx solid #f2f2f2;  
+  
+    text-align: center;  
+  
+    line-height: 80rpx;}  
+
+.swiper-tab-list{  font-size: 30rpx;  
+
+  display: inline-block;  
+
+  width: 33.33%;  
+
+  color: #777777;  
+
+}  
+.swiper-tab-list1{  font-size: 30rpx;  
+
+  display: inline-block;  
+
+  width:19.5%;  
+
+  color: #777777;  
+
+}  
+
+.on{ color: #da7c0c;  
+
+  border-bottom: 5rpx solid #da7c0c;}  
+
+  .on1{ color: #da7c0c; }  
+
+
+
+/*参数*/
+.Swiper_Price,.Swiper_Batch,.Swiper_Request{
+  margin: 20rpx 0 20rpx 0rpx;
+  font-size: 38rpx;
+  color: #000;
+}
+.Swiper_Price,.Swiper_Batch,.Swiper_Request text{
+  margin-left: 20rpx;
+}
+.title1{
+  color: #737373;
+}
+/*商品详情*/
+.Applications,.Applications1{
+  margin-left: 20rpx;
+}
+.Applications1{
+  text-indent: 80rpx;
+}
+/*评价*/
+
+
+/*底部悬浮栏*/
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+}
+.button-green {
+  background-color: #4caf50; /* Green */
+}
+.button-red {
+  background-color: #f44336; /* 红色 */
+}
+
+button {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 50%;
+  height: 100%;
+  line-height: 100rpx;
+}
+.detail-nav image {
+  width: 70rpx;
+  height: 50rpx;
+  margin: 20rpx 40rpx;
+}
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+/*半遮屏*/
+/*使屏幕变暗 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+ }
+ /*对话框 */
+ .commodity_attr_box {
+  height: 600rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+ }
+   /*加减按钮样式*/
+   .stepper{
+    width: 200rpx;
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    text-align: center;
+    margin-left:60rpx;
+    margin-top:50rpx;
+    border:1px solid #a5a4a4;
+}
+.stepper button::after{
+  border-radius: 0;
+}
+.number{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+/*加入购物车弹窗的按钮样式*/
+.normal{
+  color: #000;
+  line-height: 55rpx;
+  text-align: center;
+  font-size: 50rpx;
+  background: #fff;
+  border-left: 1px solid #a4a4a4;
+  border-right: 0;
+}
+.normal2{
+  color: #000;
+  line-height: 55rpx;
+  text-align: center;
+  font-size: 50rpx;
+  background: #fff;
+  border-right: 1px solid #a4a4a4;
+  border-left: 0;
+}
+/*关闭弹窗按钮样式*/
+.close-circle{
+  width:44rpx;
+  height:40rpx;
+  float:right;
+  margin-right:20rpx;
+}
+
+  /*字体数量*/
+  .text_num{
+    font-size:34rpx;
+    height:40rpx;
+    margin-top:57rpx;
+    margin-left:40rpx;
+
+  }
+  /*确定按钮*/
+  .define{
+    background-color: #f44336; /* 红色 */
+    width: 100%;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    position: fixed;
+    bottom: 0;
+  }
+  .num{
+    display: flex;
+    flex-flow: row;
+  }

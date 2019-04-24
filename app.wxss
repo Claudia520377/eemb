@@ -1,0 +1,84 @@
+/**app.wxss**/
+@import 'venders/weui';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+   /* padding: 200rpx 0; */
+  box-sizing: border-box;
+} 
+/* page {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+  color: #666;
+} */
+
+/*搜索框*/
+.searchbar-result {
+  margin-top: 0;
+  font-size: 28rpx;
+}
+
+.searchbar-result::before {
+  display: none;
+}
+.weui-search-bar{
+  background-color: #fff;
+}
+.weui-search-bar__label{
+  background-color: #f3f3f3;
+}
+.clearfix::after,
+.clearfix::before{
+  content:" ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+/* 没有更多了div */
+.nomorebox{
+  color:#dfdbdb;
+  width: 750rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.nomorebox text{
+  margin: 0 10rpx;
+}
+.nomorebox .nomoreline{
+  width: 100rpx;
+  height: 3rpx;
+  background-image: linear-gradient(to right, #f3f3f3,#dfdbdb);
+}
+.nomorebox .nomorelineright{
+  background-image: linear-gradient(to left, #f3f3f3,#dfdbdb);
+}
+
+/* weui样式重置 */
+.weui-navbar__item.weui-bar__item_on{
+  color:#ff5555;
+}
+.weui-navbar__slider{position:absolute;content:" ";left:0;bottom:0;width:6em;height:3px;background-color:#ff5555;-webkit-transition:-webkit-transform .3s;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s}
+
+.weui-btn{
+  background-color:#ff5555
+}
+
+/* 空div */
+.line-width30{
+  height: 20rpx;
+  width: 750rpx;
+}
+.line-width50{
+  height: 30rpx;
+  width: 750rpx;
+}

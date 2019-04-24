@@ -1,0 +1,17 @@
+.weui-navbar {
+display:-webkit-flex;
+display:flex;
+position:absolute;
+z-index:500;
+top:0;
+width:100%;
+border-bottom:none;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+  color: #666;
+}

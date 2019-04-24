@@ -1,0 +1,70 @@
+/* pages/profile/profile.wxss */
+
+.weui-cells{
+    font-size: 28rpx;
+  }
+  .navigatorbtn{
+    border:1px solid #fff;
+    width: 104rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .numdedail{
+    color:#fef31f;
+  }
+  .prifileheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color:#fff;
+    background-color:#ff5555;
+    font-size: 28rpx;
+    height: 246rpx;
+  }
+  .usercells{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .avator{
+    width: 120rpx;
+    height: 120rpx;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .usertodo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:#fff;
+    height: 150rpx;
+    border-top: 1rpx solid #d9d9d9;
+  }
+  .usertodo image{
+    width: 70rpx;
+    height: 70rpx;
+    margin-top: 20rpx;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box text{
+    margin-top: 10rpx;
+    font-size: 28rpx;
+  }
+  .weui-cells:after{bottom:0;border-bottom:none;}
+  .weui-cells:before{top:0;border-top:none}
+  page {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    font-size: 28rpx;
+    color: #666;
+  }
