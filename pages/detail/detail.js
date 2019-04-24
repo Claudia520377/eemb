@@ -15,6 +15,20 @@ Page({
       }
     })
   },
+  coupons:function(){
+wx.navigateTo({
+  url: '/pages/receivecoupon/receivecoupon',
+  success: function(res){
+    // success
+  },
+  fail: function() {
+    // fail
+  },
+  complete: function() {
+    // complete
+  }
+})
+  },
   // 跳到购物车
   toCar() {
     wx.switchTab({
@@ -105,8 +119,9 @@ Page({
 
 
   data: {
+
     carts: [
-      { cid: 1063, title: 'ER14250-VB', image: 'http://eemb.cn/assets/icons/ER14250-VB.png', num: '1', price: '122.0', sum: '122.0', selected: true },
+      { cid: 1063, title: 'ER14250-VB', image: 'http://eemb.cn/assets/icons/ER14250-VB.png', num: '1', price: '20', sum: '20.0', selected: true,detail:'ER1620 Li-MnO2 Battery Energy Type' },
     ],
     minusStatuses: ['disabled', 'disabled', 'normal', 'normal', 'disabled'],
     /** 
@@ -122,6 +137,7 @@ Page({
     showModalStatus: false
   },
   onLoad: function () {
+    
     var that = this;
     /** 
      * 获取系统信息 
@@ -129,6 +145,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
+
           winWidth: res.windowWidth,
           winHeight: res.windowHeight
         });

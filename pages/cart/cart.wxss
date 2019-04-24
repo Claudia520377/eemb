@@ -207,12 +207,3 @@ background-color:#ff5555;
   }
 .carts-num .minus{font-size: 28rpx;}
 .carts-num .plus{font-size: 28rpx;}
-
-page {
-  width: 100%;
-  height: 100%;
-  background-color: #f3f3f3;
-  font-size: 28rpx;
-  color: #666;
-}
-

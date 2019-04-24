@@ -1,4 +1,7 @@
 /* pages/detail/detail.wxss */
+page{
+  background-color: #fff;
+}
 /*轮播图的高度*/
 .slides{
     height: 350rpx;
@@ -80,7 +83,7 @@
   }
   /*活动*/
   .span2{
-    margin: 20rpx 0 20rpx 20rpx;
+    margin: 15rpx 0 15rpx 20rpx;
   }
   .activity{
     font-size: 34rpx;
@@ -133,8 +136,8 @@ color: #737373;
 
 /*官方旗舰店*/
 .span6{
- height: 130rpx;
- line-height: 130rpx;
+ height: 100rpx;
+ line-height: 100rpx;
  display: flex;
  align-items:center;
 }

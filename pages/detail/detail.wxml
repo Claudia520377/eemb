@@ -1,25 +1,27 @@
 <!--pages/detail/detail.wxml-->
-<!--轮播图-->
+
+<view wx:for="{{carts}}" wx:key="">
+  <!--轮播图-->
 <swiper class="slides" autoplay="{{true}}" indicator-dots="{{true}}" indicator-active-color="#fff">
-  <swiper-item>
-    <image src="http://eemb.cn/assets/icons/CR1620.png" mode="aspectFill" />
-  </swiper-item>
-  <swiper-item>
-    <image src="http://eemb.cn/assets/icons/CR1620.png" mode="aspectFill" />
-  </swiper-item>
-  <swiper-item>
-    <image src="http://eemb.cn/assets/icons/CR1620.png" mode="aspectFill" />
-  </swiper-item>
-</swiper>
+    <swiper-item>
+      <image src="{{item.image}}" mode="aspectFill" />
+    </swiper-item>
+    <swiper-item>
+      <image src="{{item.image}}" mode="aspectFill" />
+    </swiper-item>
+    <swiper-item>
+      <image src="{{item.image}}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
 <view class="message">
   <view>
-    <text class="name">CR1620</text>
+    <text class="name">{{item.title}}</text>
   </view>
   <view>
-    <text class="details">CR1620 Li-MnO2 Battery Energy Type</text>
+    <text class="details">{{item.detail}}</text>
   </view>
   <view>
-    <text class="price">0.0412$</text>
+    <text class="price">￥{{item.price}}</text>
   </view>
   <view class="mode">
     <text class="Courier">快递：包邮</text>
@@ -27,14 +29,14 @@
   </view>
 </view>
 <view class="hr"></view>
-  <view class="span1">
+  <view class="span1" bindtap="coupons">
     <text class="coupons">优惠券</text>
     <text class="coupons_p">¥20</text> 
         <image class="img_right" src="http://eemb.cn/assets/tabs/right.png" />
   </view>
     <view class="hr1"> </view>
       
-  <view class="span2">
+  <view class="span2"  bindtap="coupons">
     <text class="activity">活动</text>
     <text class="integral">积分</text>
     <text class="discount">最高抵扣¥20.00</text> 
@@ -154,7 +156,7 @@
   </swiper> 
     </swiper-item>
     </swiper>  
-
+  </view>
     <!--底部悬浮栏-->
     <view class="detail-nav">
       <image bindtap="back" src="http://eemb.cn/assets/tabs/home1.png" />
@@ -186,7 +188,7 @@
 
  <button class="define" data-goodid="{{goods.goodsId}}" bindtap="bindcart" formType="submit">确定</button>
 </view>
-  
+
 
 
 

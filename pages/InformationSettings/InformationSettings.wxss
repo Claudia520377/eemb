@@ -2,13 +2,7 @@
 .page {
     margin-top:20rpx;
 }
-page {
-  width: 100%;
-  height: 100%;
-  background-color: #f3f3f3;
-  font-size: 28rpx;
-  color: #666;
-}
+
 .weui-cells:before{top:0;border-top:none}
 .weui-cells:after{bottom:0;border-bottom:none}
 .weui-select{

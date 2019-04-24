@@ -102,6 +102,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /*搜索框功能 */
   showSearchHandle() {
     this.setData({ searchShowed: true })
   },
