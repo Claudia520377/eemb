@@ -16,22 +16,21 @@
         <!-- 列表标题 -->
         <text class="list_name">{{item.title}}</text>
         <!-- 列表商品图片 -->
-        <image class="list_img" src="{{item.image}}"></image>
+        <image class="list_img" src="{{item.image}}" bindtap="img_product"></image>
         <!-- 规格 -->
-        <text class="cart_g_name">{{item.pro_name}}</text>
+        <text class="cart_g_name">{{item.detail}}</text>
         <!-- 收藏 -->
         <label class='collert' bindtap='btn_collert'>
           <image class='collert_img'src='/assets/collert.png'></image> 收藏</label>
         <!-- 价格 -->
         <text class="list_price">￥{{item.price}}</text>
-        <view style='display:{{show_edit}}'>
-        <view class="carts-num">
+        <view   style='display:{{show_edit}}'>
+        <view class="stepper">
           <!--减按钮  -->
-          <lable class="minus" bindtap="btn_minus" data-obj="{{obj}}" data-index="{{index}}">-</lable>
+          <button class="normal2"  data-obj="{{obj}}" data-index="{{index}}" bindtap="btn_minus">-</button>
           <!-- 文本框值 -->
-          <label class="view_text_center"  bindinput='input_num' data-index="{{index}}">{{item.num}}</label>
-          <!-- 加按钮-->
-          <lable class="plus" bindtap="btn_add" data-index="{{index}}">+</lable>
+          <input class="view_text_center"  bindinput='input_num' data-index="{{index}}" value="{{item.num}}" />
+          <button class="normal" bindtap="btn_add" data-index="{{index}}">+</button>
         </view></view>
       </view>
         <!-- 固定底部 -->

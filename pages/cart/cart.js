@@ -9,41 +9,26 @@ Page({
     edit_name: "编辑",
     edit_show: "none",
     hasList: true,
-    list: [
-      {
-        id: 1,
-        title: '[颜色区分新旧不混]新品',
-        image: 'http://eemb.cn/assets/icons/CR1620.png',
-        pro_name: "碱性电池6粒装5号/7号",
-        num: 10,
-        price: 180.33,
-        selected: true
-      },
-      {
-        id: 2,
-        title: '[颜色区分新旧不混]新品',
-        image: 'http://eemb.cn/assets/icons/CR1620.png',
-        pro_name: "碱性电池6粒装5号/7号",
-        num: 20,
-        price: 62.99999,
-        selected: true
-      },
-      {
-        id: 2,
-        title: '[颜色区分新旧不混]新品',
-        image: 'http://eemb.cn/assets/icons/CR1620.png',
-        pro_name: "碱性电池6粒装5号/7号",
-        num: 30,
-        price: 175.55,
-        selected: true
-      }
-    ],
+    list: [],
     totalPrice: 0,
-    shopcarcount:0,
+    shopcarcount: 0,
     selectAllStatus: true,
   },
-  
-
+//点击图片跳转详情页
+  img_product: function () {
+    wx.navigateTo({
+      url: '../detail/detail',
+      success: function (res) {
+        // success
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+  },
   onShow() {
     wx.showToast({
       title: '加载中',
@@ -51,11 +36,31 @@ Page({
       duration: 1000
     })
 
+    try {
+      var list_str = wx.getStorageSync('cart')
+      console.log(list_str);
+      // 同步接口立即返回值
+      // 重新渲染数据
+      this.setData({
+        list: list_str
+      });
+    } catch (e) {
+      console.log('读取key发生错误')
+    }
+    try{
+      wx.setStorageSync('cart', list_str);
+    }catch(e){
+      console.log('读取key发生错误')
+    }
+    //数量
+    this.count_num();
     // 价格方法
     this.count_price();
+
   },
-  onLoad(){
-    this.count_num()
+
+  onLoad() {
+    this.count_num();
   },
   /**
    * 当前商品选中事件
@@ -107,7 +112,7 @@ Page({
     var that = this;
     // 获取索引
     const index = e.currentTarget.dataset.index;
-    
+
     // 获取商品列表数据
     let list = this.data.list;
     let num = list[index].num
@@ -120,11 +125,11 @@ Page({
         if (res.confirm) {
           // 删除索引从1
           list.splice(index, 1);
-          shopcarcount -= 
-          // 页面渲染数据
-          that.setData({
-            list: list
-          });
+          shopcarcount -=
+            // 页面渲染数据
+            that.setData({
+              list: list
+            });
           app.globalData.shopcarcount -= num;
           console.log(app.globalData.shopcarcount)
 
@@ -168,7 +173,7 @@ Page({
     this.setData({
       selectAllStatus: selectAllStatus,
       list: list,
-      totalcount:totalcount
+      totalcount: totalcount
     });
     // 计算金额方法
     this.count_price();
@@ -188,8 +193,13 @@ Page({
     // 点击递增
     num = num + 1;
     list[index].num = num;
-    shopcarcount +=1
-
+    shopcarcount += 1
+    //  console.log(list[index].num)
+     try{
+      wx.setStorageSync('cart', list);
+    }catch(e){
+      console.log('读取key发生错误')
+    }
     // 重新渲染 ---显示新的数量
     this.setData({
       list: list,
@@ -245,7 +255,12 @@ Page({
     // else  num大于1  点击减按钮  数量--
     num = num - 1;
     list[index].num = num;
-    shopcarcount -=1;
+    shopcarcount -= 1;
+    try{
+      wx.setStorageSync('cart', list);
+    }catch(e){
+      console.log('读取key发生错误')
+    }
     // 渲染页面
     this.setData({
       list: list,
@@ -292,9 +307,10 @@ Page({
   count_price() {
     // 获取商品列表数据
     let list = this.data.list;
+
     // 声明一个变量接收数组列表price
     let total = 0;
-    
+
     // 循环列表得到每个数据
     for (let i = 0; i < list.length; i++) {
       // 判断选中计算价格
@@ -310,13 +326,14 @@ Page({
 
     });
   },
-  count_num(){
+  count_num() {
     var that = this
     let shopcarcount = this.data.shopcarcount;
     let list = this.data.list;
     for (let i = 0; i < list.length; i++) {
       shopcarcount += list[i].num
     }
+
     this.setData({
       list: list,
       shopcarcount: shopcarcount

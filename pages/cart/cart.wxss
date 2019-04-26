@@ -77,6 +77,7 @@
 width: 28rpx;
 height: 28rpx;
 }
+
 /* 列表商品名称 */
 .list_name{
   position: absolute;
@@ -178,32 +179,49 @@ background-color:#ff5555;
 .navigator-hover{
     background: none;
 }
-/*数量加减*/
-.carts-num{
-  position: absolute;
-  right: 30rpx;
-  bottom: 23rpx;
-  display: flex; 
-  align-items: center;
+
+ /*加减按钮样式*/
+ .stepper{
+
+  width: 200rpx;
+  height: 60rpx;
+  display: flex;
   text-align: center;
-   height: 50rpx;
+  float: right;
+  margin-right:40rpx;
+  margin-top:110rpx;
+  border:1px solid #a5a4a4;
+}
+.stepper button::after{
+border-radius: 0;
 }
 .view_text_center{
-  border: 1rpx solid #ebebeb;
-  font-size: 28rpx;  
-  display: inline-block;
-  color: #333;
-  height: 50rpx;
-  line-height: 50rpx;
-  width: 76rpx;
-  }
-.carts-num .minus, .carts-num .plus{
-  margin: 10rpx;
-   border: 1rpx solid #ebebeb;
-   color: #000; text-align: center;
-   height: 50rpx; 
-   line-height: 50rpx;
-    width: 40rpx;
-  }
-.carts-num .minus{font-size: 28rpx;}
-.carts-num .plus{font-size: 28rpx;}
+  height: 100%;
+}
+/*加入购物车弹窗的按钮样式*/
+.normal{
+
+  padding: 0;
+color: #000;
+line-height: 55rpx;
+text-align: center;
+font-size: 50rpx;
+background: #fff;
+border-left: 1px solid #a4a4a4;
+border-right: 0;
+width:160rpx;
+border-radius:0;
+}
+.normal2{
+color: #000;
+line-height: 55rpx;
+text-align: center;
+font-size: 50rpx;
+background: #fff;
+border-right: 1px solid #a4a4a4;
+border-left: 0;
+width:160rpx;
+border-radius:0;
+padding: 0;
+
+} 

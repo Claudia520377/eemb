@@ -186,7 +186,7 @@
 </view>
   
 
- <button class="define" data-goodid="{{goods.goodsId}}" bindtap="bindcart" formType="submit">确定</button>
+ <button class="define" data-cid="{{carts.cid}}" bindtap="bindcart" formType="submit">确定</button>
 </view>
 
 

@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var goodList = require('../data/data.js');
 Page({
 
   /**
@@ -31,6 +31,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    try {
+      wx.setStorageSync('cart', goodList.goodList);
+      // 返回（在if内使用return，跳出循环节约运算，节约性能） 
+      //关闭窗口
+    } catch (e) {
+      console.log(e);
+    }
     // wx.request({
     //   // url: 'https://URL',
     //   url: '',
