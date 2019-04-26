@@ -16,7 +16,7 @@ Page({
     const app = getApp()
     this.setData({
       userInfo: app.globalData.userInfo,
-      shopcarcount:app.globalData.shopcarcount
+      //num:app.globalData.num
     });
   },
 
@@ -31,10 +31,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var list_str = wx.getStorageSync('cart');
+    var num=0;
+console.log(list_str);
+list_str.forEach(list_str => {
+  num=num+list_str.num;
+});
+
+console.log(num);
     const app = getApp()
     this.setData({
       userInfo: app.globalData.userInfo,
-      shopcarcount:app.globalData.shopcarcount
+      shopcarcount:num
     });
   },
 

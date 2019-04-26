@@ -11,10 +11,10 @@ Page({
     hasList: true,
     list: [],
     totalPrice: 0,
-    shopcarcount: 0,
+    // shopcarcount: 0,
     selectAllStatus: true,
   },
-//点击图片跳转详情页
+  //点击图片跳转详情页
   img_product: function () {
     wx.navigateTo({
       url: '../detail/detail',
@@ -47,20 +47,22 @@ Page({
     } catch (e) {
       console.log('读取key发生错误')
     }
-    try{
+    try {
       wx.setStorageSync('cart', list_str);
-    }catch(e){
+    } catch (e) {
       console.log('读取key发生错误')
     }
+
     //数量
     this.count_num();
     // 价格方法
     this.count_price();
-
+    // wx.clearStorageSync();
   },
 
   onLoad() {
     this.count_num();
+
   },
   /**
    * 当前商品选中事件
@@ -117,7 +119,7 @@ Page({
     let list = this.data.list;
     let num = list[index].num
     // console.log(num)
-    let shopcarcount = this.data.shopcarcount
+    // let shopcarcount = this.data.shopcarcount
     wx.showModal({
       title: '提示',
       content: '确认删除吗',
@@ -125,13 +127,13 @@ Page({
         if (res.confirm) {
           // 删除索引从1
           list.splice(index, 1);
-          shopcarcount -=
+          // shopcarcount -=
             // 页面渲染数据
             that.setData({
               list: list
             });
-          app.globalData.shopcarcount -= num;
-          console.log(app.globalData.shopcarcount)
+          // app.globalData.shopcarcount -= num;
+          // console.log(app.globalData.shopcarcount)
 
           // 如果数据为空
           if (!list.length) {
@@ -187,28 +189,28 @@ Page({
     const index = e.currentTarget.dataset.index;
     // 获取商品数据
     let list = this.data.list;
-    let shopcarcount = this.data.shopcarcount
+    // let shopcarcount = this.data.shopcarcount
     // 获取商品数量
     let num = list[index].num;
     // 点击递增
     num = num + 1;
     list[index].num = num;
-    shopcarcount += 1
+    // shopcarcount += 1
     //  console.log(list[index].num)
-     try{
+    try {
       wx.setStorageSync('cart', list);
-    }catch(e){
+    } catch (e) {
       console.log('读取key发生错误')
     }
     // 重新渲染 ---显示新的数量
     this.setData({
       list: list,
-      shopcarcount: shopcarcount
+      // shopcarcount: shopcarcount
     });
     // 计算金额方法
     this.count_price();
     // console.log(totalcount)
-    app.globalData.shopcarcount = shopcarcount;
+    // app.globalData.shopcarcount = shopcarcount;
     // console.log(app.globalData.shopcarcount)
     // this.setData({
     //   shopcarcount: shopcarcount
@@ -245,7 +247,7 @@ Page({
     const index = e.currentTarget.dataset.index;
     // 获取商品数据
     let list = this.data.list;
-    let shopcarcount = this.data.shopcarcount;
+    // let shopcarcount = this.data.shopcarcount;
     // 获取商品数量
     let num = list[index].num;
     // 判断num小于等于1  return; 点击无效
@@ -255,21 +257,21 @@ Page({
     // else  num大于1  点击减按钮  数量--
     num = num - 1;
     list[index].num = num;
-    shopcarcount -= 1;
-    try{
+    // shopcarcount -= 1;
+    try {
       wx.setStorageSync('cart', list);
-    }catch(e){
+    } catch (e) {
       console.log('读取key发生错误')
     }
     // 渲染页面
     this.setData({
       list: list,
-      shopcarcount: shopcarcount
+      // shopcarcount: shopcarcount
     });
     // 调用计算金额方法
     this.count_price();
     // console.log(totalcount);
-    app.globalData.shopcarcount = shopcarcount;
+    // app.globalData.shopcarcount = shopcarcount;
     // console.log(app.globalData.shopcarcount)
   },
   // 提交订单
@@ -328,18 +330,18 @@ Page({
   },
   count_num() {
     var that = this
-    let shopcarcount = this.data.shopcarcount;
+    // let shopcarcount = this.data.shopcarcount;
     let list = this.data.list;
     for (let i = 0; i < list.length; i++) {
-      shopcarcount += list[i].num
+      // shopcarcount += list[i].num
     }
 
     this.setData({
       list: list,
-      shopcarcount: shopcarcount
+      // shopcarcount: shopcarcount
     });
     // 购物车数量
-    app.globalData.shopcarcount = shopcarcount;
+    // app.globalData.shopcarcount = shopcarcount;
     // console.log(app.globalData.shopcarcount)
   },
 

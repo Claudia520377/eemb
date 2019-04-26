@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/cart/cart",
     "pages/index/index",
+    "pages/cart/cart",
     "pages/detail/detail",
     "pages/profile/profile",
     "pages/product/product",
-    
     "pages/logs/logs",
     "pages/order/order",
     "pages/product_Bicycle/product_Bicycle",

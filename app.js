@@ -45,6 +45,6 @@ App({
       {used:[]},
       {expired: [] }
     ],
-    shopcarcount:0
+    // num:0 占时不用
   }
 })

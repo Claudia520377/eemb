@@ -1,77 +1,22 @@
 <!--pages/product_Bicycle/product_Bicycle.wxml-->
 <include src="/includes/search-bar.wxml"/>
 <view class="btn">  
-<button class="btn1" bindtap='btn_CR'> 36V系列 </button>
-<button class="btn1" bindtap='btn_LP'> 48V系列</button>
-<button class="btn1" bindtap='btn_Hot'>60V系列 </button>  
-<button class="btn1" bindtap='btn_ER'> 72V系列</button>
+<button class="btn1" bindtap='btn_type' data-type="V36">36V</button>
+<button class="btn1" bindtap='btn_type' data-type="V48">48V</button>
+<button class="btn1" bindtap='btn_type' data-type="V60">60V </button>  
+<button class="btn1" bindtap='btn_type' data-type="V72">72V</button>
 </view>
 
-<view class="cells">
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
+<view class="cells" wx:for="{{productList.product}}" wx:key="">
+    <navigator class="item" url="{{item.url}}">
+        <image class="" src="{{item.image}}" mode="aspectFill"/>
           <view class="meta">
-              <text class="name">产品编号：36V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
+              <text class="name">产品编号：{{item.name}}</text>
+              <text class="price">价格：{{item.price}}</text>
+              <text class="sales">销量：{{item.price}}</text>
           </view>
     </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：36V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：48V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：48V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：48V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：60V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：60V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
-    <navigator class="item" target="" url="/pages/detail/detail">
-        <image class="" src="http://eemb.cn/assets/icons/so2.png" mode="aspectFill"/>
-          <view class="meta">
-              <text class="name">产品编号：72V电动自行车</text>
-              <text class="price">价格：0.133$</text>
-              <text class="sales">销量：26710</text>
-          </view>
-    </navigator>
+   
 
 </view>
   
