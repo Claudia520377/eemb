@@ -149,11 +149,14 @@ Page({
   },
   // 立即购买
   immeBuy() {
-    wx.showToast({
-      title: '购买成功',
-      icon: 'success',
-      duration: 2000
-    });
+    wx.navigateTo({
+      url: '/pages/address/address',
+    })
+    // wx.showToast({
+    //   title: '购买成功',
+    //   icon: 'success',
+    //   duration: 2000
+    // });
   },
 
 

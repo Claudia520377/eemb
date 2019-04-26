@@ -20,15 +20,15 @@
                 <view class='orderListDetails'>
                   <view class='ListDetails'>
                     <image src='{{item.img}}'></image>
-                    <text class='orderListmodel'>型号{{item.model}}</text>
+                    <text class='orderListmodel'>{{item.model}}</text>
                   </view>
                   <view class="orderlistprice">
                     <text class='price'>￥{{item.price}}</text>
-                    <text class='num'>{{item.num}}</text>
+                    <text class='num'>*{{item.num}}</text>
                   </view>
                 </view>
                 <view class='orderlistcountprice'>
-                  <text>共一个商品 实付</text>
+                  <text>实付</text>
                   <text class='finallprice'>￥{{item.finallprice}}</text>
                 </view>
                 <view class='handle' wx:if="{{tabItem.text==='全部'  || tabItem.text==='代付款' }}">

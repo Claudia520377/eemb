@@ -1,134 +1,131 @@
-<!--pages/profile/profile.wxml-->
 <!-- <view class="page"> -->
-    <view class='prifileheader'>
-  
-          <view class=' prifilebalancebox usercells'>
-            <view>余额</view>
-            <view class='numdedail'>{{userInfo.balance}}</view>
-            <navigator url='' class='navigatorbtn'>充值</navigator>
-          </view>
-          <view class='userorder usercells'>
-            <open-data type="userAvatarUrl" class="avator" ></open-data>
-            <open-data type="userNickName" lang="zh_CN"></open-data>
-            <view>{{userInfo.usergrade}}</view>
-          </view>
-          <view class='point usercells'>
-            <view>积分</view>
-            <view class='numdedail'>{{userInfo.points}}</view>
-            <navigator url="" class='navigatorbtn'>兑换</navigator>
-          </view>
-        </view>
-        <view class="weui-cells weui-cells_after-title">
-          <navigator url="/pages/order/order" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-                <image src="/assets/profile_07.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-            </view>
-            <view class="weui-cell__bd">我的订单</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"><view style="margin-left: 5px;">查看订单详情</view></view>
-            </navigator>
-        </view>
-        <view class="usertodo">
-            <navigator url="" class="usertodoitem">
-              <view class="box">
-                <image src='http://eemb.cn/wx/assets/profilenav1.png'></image>
-                <text>代付款</text>
-              </view>
-            </navigator>
-            <navigator url="" class="usertodoitem">
-              <view class="box">
-                <image src='http://eemb.cn/wx/assets/profilenav2.png'></image>
-                <text>代发货</text>
-              </view>
-            </navigator>
-            <navigator url=""  class="usertodoitem">
-              <view class="box">
-                <image src='http://eemb.cn/wx/assets/profilenav3.png'></image>
-                <text>待收货</text>
-              </view>
-            </navigator>
-            <navigator url="" class="usertodoitem">
-              <view class="box">
-                <image src='http://eemb.cn/wx/assets/profilenav4.png'></image>
-                <text>退换货</text>
-              </view>
-            </navigator>
-        </view>
-        <view class='line-width30'></view>
-        <!-- </view> -->
-        <!-- <view class='line-width50'></view> -->
-        
-        <view class="weui-cells weui-cells_after-title">
-          <navigator url="/pages/conversioncoupon/conversioncoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile1.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">兑换记录</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="/pages/receivecoupon/receivecoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">领取优惠券</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="/pages/mycoupon/mycoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">我的优惠券</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-        </view>
-        <view class='line-width30'></view>
-        <view class="weui-cells weui-cells_after-title">
-          <navigator url="/pages/cart/cart" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="switchTab">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile3.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">我的购物车</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"><view class="weui-badge" style="margin-left: 5px;">{{shopcarcount}}</view></view>
-          </navigator>
-          <navigator url="/pages/favorite/favorite" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile4.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">我的收藏夹</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="/pages/footprint/footprint" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile5.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">我的足迹</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-        </view>
-        <view class='line-width30'></view>
-        <view class="weui-cells weui-cells_after-title">
-          <navigator url="/pages/recharge/recharge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-                <image src="http://eemb.cn/wx/assets/profile6.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-            </view>
-            <view class="weui-cell__bd">充值记录</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-        </view>
-        <view class='line-width30'></view>
-        <view class="weui-cells weui-cells_after-title">
-          <navigator url="/pages/address/address" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile7.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">收货地址管理</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="/pages/InformationSettings/InformationSettings" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <view class="weui-cell__hd">
-                  <image src="http://eemb.cn/wx/assets/profile8.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-              </view>
-              <view class="weui-cell__bd">会员资料设置</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-        </view>
-        <view class='line-width30'></view>
+<view class='prifileheader'>
+<!-- <open-data type="userAvatarUrl"></open-data> -->
+<!-- <open-data type="userNickName" lang="zh_CN"></open-data> -->
+  <view class=' prifilebalancebox usercells'>
+    <view>余额</view>
+    <view class='numdedail'>{{userInfo.balance}}</view>
+    <navigator url='' class='navigatorbtn'>充值</navigator>
+  </view>
+  <view class='userorder usercells'>
+    <open-data type="userAvatarUrl" class="avator" ></open-data>
+    <open-data type="userNickName" lang="zh_CN"></open-data>
+    <view>{{userInfo.usergrade}}</view>
+  </view>
+  <view class='point usercells'>
+    <view>积分</view>
+    <view class='numdedail'>{{userInfo.points}}</view>
+    <navigator url="" class='navigatorbtn'>兑换</navigator>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/order/order" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+        <image src="/assets/profile_07.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">我的订单</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"><view style="margin-left: 5px;">查看订单详情</view></view>
+    </navigator>
+</view>
+<view class="usertodo">
+    <navigator url="/pages/order/order?currentTab=1" class="usertodoitem" >
+      <view class="box">
+        <image src='http://eemb.cn/wx/assets/profilenav1.png'></image>
+        <text>代付款</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?currentTab=2" class="usertodoitem">
+      <view class="box">
+        <image src='http://eemb.cn/wx/assets/profilenav2.png'></image>
+        <text>代发货</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?currentTab=3"  class="usertodoitem">
+      <view class="box">
+        <image src='http://eemb.cn/wx/assets/profilenav3.png'></image>
+        <text>待收货</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?currentTab=5" class="usertodoitem">
+      <view class="box">
+        <image src='http://eemb.cn/wx/assets/profilenav4.png'></image>
+        <text>退换货</text>
+      </view>
+    </navigator>
+</view>
+<view class='line-width30'></view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/conversioncoupon/conversioncoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile1.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">兑换记录</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="/pages/receivecoupon/receivecoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">领取优惠券</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="/pages/mycoupon/mycoupon" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的优惠券</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class='line-width30'></view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/cart/cart" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="switchTab">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile3.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的购物车</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"><view class="weui-badge" style="margin-left: 5px;">{{shopcarcount}}</view></view>
+  </navigator>
+  <navigator url="/pages/favorite/favorite" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile4.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的收藏夹</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="/pages/footprint/footprint" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile5.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的足迹</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class='line-width30'></view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/recharge/recharge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+        <image src="http://eemb.cn/wx/assets/profile6.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">充值记录</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class='line-width30'></view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/address/address" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile7.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">收货地址管理</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="/pages/InformationSettings/InformationSettings" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="http://eemb.cn/wx/assets/profile8.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">会员资料设置</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class='line-width30'></view>

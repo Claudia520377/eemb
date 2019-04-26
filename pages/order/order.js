@@ -10,51 +10,51 @@ Page({
       {
         text: "全部",
         orderDetails: [
-          { OrderID: '11111', img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: '222222', img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       },
       {
         text: "代付款",
         orderDetails: [
-          { OrderID: '33333333333', img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: '4444444444', img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
 
       },
       {
         text: "代发货",
         orderDetails: [
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       },
       {
         text: "待收货",
         orderDetails: [
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       },
       {
         text: "已完成",
         orderDetails: [
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       },
       {
         text: "退换货",
         orderDetails: [
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       },
       {
         text: "回收站",
         orderDetails: [
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 },
-          { OrderID: 456465546456, img: "/assets/nav_01.png", model: "cr", price: 49.00, num: 2, finallprice: 98 }
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/CR1620.png", model: "CR1620", price: 0.333, num: 2, finallprice: 0.666 },
+          { OrderID: 456465546456, img: "http://eemb.cn/assets/icons/LP103395.png", model: "LP103395", price: 0.333, num: 2, finallprice: 0.666 }
         ]
       }
     ],
@@ -62,7 +62,13 @@ Page({
     navScrollLeft: 0
   },
   //事件处理函数
-  onLoad: function () {
+  onLoad: function (e) {
+    // 获取传递过劳的参数
+    if (e.currentTab) {
+      this.setData({
+        currentTab: e.currentTab
+      })
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -118,6 +124,7 @@ Page({
     }
   },
   switchTab(event) {
+    console.log(event);
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
     this.setData({

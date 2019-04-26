@@ -1,0 +1,10 @@
+<!--pages/order_details/order_details.wxml-->
+<view class="address">
+  <image class='timg' src='/assets/timg.png'></image>
+ 
+  <text class='userName'>张三</text>
+  <text class='tel'>13144556671\n</text>
+  <text class='address_list'>湖北省武汉市雄楚大道xxxx\n</text>
+  <text class='tips'>收货不便时，可选择免费代收货服务</text>
+     <image class='right' src='http://eemb.cn/assets/tabs/right.png'></image>
+</view>

@@ -1,50 +1,51 @@
-<!--pages/InformationSettings/InformationSettings.wxml-->
 <!--pages/data/data.wxml-->
 <view class='page'>
-    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">修改成功</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">姓名</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入您的名字"/>
-            </view>
-        </view>
-        <view class="weui-cell weui-cell_input weui-cell_vcode">
-            <view class="weui-cell__hd">
-                <view class="weui-label">手机号</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入手机号" />
-            </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">出生日期</view>
-            </view>
-            <view class="weui-cell__bd">
-                <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-                    <view class="weui-input">{{date}}</view>
-                </picker>
-            </view>
-        </view>
-        <view class="weui-cell weui-cell_select">
-            <view class="weui-cell__hd weui-cell__hd_in-select-after">
-                <view class="weui-label">所在城市</view>
-            </view>
-            <view class="weui-cell__bd">
-                <picker bindchange="bindCountryChange" value="{{citiesIndex}}" range="{{cities}}">
-                    <view class="weui-select weui-select_in-select-after">{{cities[citiesIndex]}}</view>
-                </picker>
-            </view>
-        </view>
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">修改成功</view>
+  <form bindsubmit="fromsubmit">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input username" placeholder="请输入您的名字" name="username" type="text" required="required"/>
+          </view>
       </view>
-      <view class="weui-btn-area">
-          <button class="weui-btn" type="warn" bindtap="showTopTips">确定修改</button>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+              <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input usertelephone " placeholder="请输入手机号" type="number" name="usertelephone"/>
+          </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">出生日期</view>
+          </view>
+          <view class="weui-cell__bd">
+              <picker mode="date" value="{{userBirthday}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                  <!-- <view class="weui-input">{{date}}</view> -->
+                  <input value='{{userBirthday}}' class='weui-input' name="userBirthday" type="data"></input>
+              </picker>
+          </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">所在城市</view>
+          </view>
+          <view class="weui-cell__bd">
+              <picker bindchange="bindCitiesChange" value="{{city}}" range="{{cities}}">
+                  <input class="weui-select weui-select_in-select-after" name="userCity" value='{{city}}'></input>
+              </picker>
+          </view>
       </view>
     </view>
-    
-    
-    
-    
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="warn" formType="submit">确定修改</button>
+    </view>
+  </form>
+</view>
+
+
+

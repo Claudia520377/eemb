@@ -1,0 +1,41 @@
+/* pages/order_details/order_details.wxss */
+/*地址栏样式*/
+.address{
+margin: 0 auto;
+width: 700rpx;
+height: 220rpx;
+background-color: #fff;
+margin-top: 20rpx;
+border-radius: 20rpx;
+}
+/*地址图标*/
+.timg{
+  height: 100rpx;
+  width:101rpx;
+  margin: 60rpx 20rpx 0 20rpx;
+}
+/*右侧文字*/
+.txt{
+  float: right;
+  margin-right: 113rpx;
+  margin-top: 50rpx;
+  width: 550rpx;
+}
+.tips{
+  color: red;
+}
+.userName{
+font-size: 36rpx;
+}
+.tel{
+  font-size: 32rpx;
+  color:#a4a4a4;
+  padding-left: 15rpx;
+}
+.right{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+ margin-right: 20rpx;
+ margin-top: 100rpx;
+}

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/order_details/order_details",
     "pages/index/index",
     "pages/cart/cart",
     "pages/detail/detail",
@@ -15,7 +16,10 @@
     "pages/footprint/footprint",
     "pages/recharge/recharge",
     "pages/address/address",
-    "pages/InformationSettings/InformationSettings"
+    "pages/InformationSettings/InformationSettings",
+    "pages/addAddress/addAddress",
+    "pages/edtaileaddress/edtaileaddress"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

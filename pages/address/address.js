@@ -1,99 +1,75 @@
-// pages/telephon:1275638500,address/telephon:1275638500,address.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    addressList:[
-      {name:"cheng cheng",telephone:1275638500,address:"湖北省 武汉市 丁字桥",isdefault:true},
-      {name:"hui hui",telephone:1275638500,address:"湖北省 武汉市 无极萨珊",isdefault:false},
-      {name:"fang fang ",telephone:1275638500,address:"湖北省 武汉市 金融港",isdefault:false}
-    ]
+    addressList:[]
 
   },
 
   // 更改默认地址
   changeaddress(e){
-    // var that = this
-    var index = e.currentTarget.dataset.index
-    var addressList = this.data.addressList
-    
-    for(let i = 0;i<addressList.length;i++){
-      let address = addressList[i]
-      address.isdefault = false;
-    }
-    addressList[index].isdefault=!addressList[index].isdefault
-    this.setData({
-      addressList:addressList
+    let that = this
+    let currentIndex = e.currentTarget.dataset.index
+    try{
+      let data = wx.getStorageSync('addressList')
+      
+      let previous =" "
+      for (let i = 0; i < data.length; i++) {
+          let obj = data[i]
+          if (obj.isdefault ){
+            previous = i;
+          }
+          obj.isdefault = false 
+        }
+      if (currentIndex !== previous) {
+        data[currentIndex].isdefault = !data[currentIndex].isdefault;
+      }
+      wx.setStorageSync('addressList', data)
+      that.init()
 
-    })
-    // console.log(isdefault)
+    }catch(e){
+      console.log(获取缓存失败)
+    }
   },
   //删除地址
   deleteaddress(e){
+    var that = this
     let index = e.currentTarget.dataset.index;
     let addressList = this.data.addressList;
-    addressList.splice(index,1);
-    this.setData({
-      addressList:addressList
-    })
-
+    //删除对应的缓存数据
+    try {
+      let data = wx.getStorageSync('addressList')
+      if (data) {
+        data.splice(index,1)
+        wx.setStorageSync('addressList', data)
+        that.init()
+      }
+    } catch (e) {
+      console.log("删除地址失败")
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (option) {
+    this.init()
+  },
+  onShow: function(option){
+    this.init()
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  init:function(){
+    var that = this
+    
+    try {
+      let data = wx.getStorageSync('addressList') || []
+      if (data) {
+        that.setData({
+          addressList: data
+        })
+        // console.log(data)
+      }
+    } catch (e) {
+      console.log(获取缓存失败)
+    }
   }
-})
+})  

@@ -13,7 +13,7 @@
     <view class='itemlist'>
       <image src='/assets/nav_01.png'></image>
       <view class='dedaile'>
-        <text class='model'>口红充电宝</text>
+        <text class='model'>cr</text>
         <text class='price'>￥49.9</text>
       </view>
     </view>

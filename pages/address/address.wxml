@@ -1,12 +1,12 @@
 <view class="coutainer">
     <view class="addresslist">
-        <view class="addressItem" wx:for="{{addressList}}" wx:key="{{index}}">
+        <view class="addressItem" wx:for="{{addressList}}" wx:key="{{index}}" wx:show="{{addressList.length!=0}}">
             <view class="addressInfo">
                 <view class="address-cells">
-                    <text class="username">{{item.name}}</text>
+                    <text class="username">{{item.nickname}}</text>
                     <text>{{item.telephone}}</text>
                 </view>
-                <text>{{item.address}}</text>
+                <text>{{item.region}}</text>
             </view>
             <view class="edtailBtn">
                 <view class="edtailBtnLeft">
@@ -15,16 +15,18 @@
                     <text>设为默认地址</text>
                 </view>
                 <view class="edtailBtnRight">
-                    <image  src="/assets/edtail.png"/>
-                    <text>编辑</text>
-                    <text bindtap="deleteaddress">删除</text>
+                    <navigator url="/pages/edtaileaddress/edtaileaddress?index={{index}}">
+                      <image  src="/assets/edtail.png"/>
+                      <text>编辑</text>
+                    </navigator>
+                    <text bindtap="deleteaddress" data-index="{{index}}">删除</text>
                 </view>
             </view>
         </view>
         
     </view>
-    <view class="addAddress">
+    <navigator  url="/pages/addAddress/addAddress" class="addAddress">
         +添加收货地址
-    </view>
+    </navigator>
 
 </view>  

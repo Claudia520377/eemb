@@ -1,10 +1,12 @@
-/* pages/InformationSettings/InformationSettings.wxss */
 .page {
     margin-top:20rpx;
 }
-
 .weui-cells:before{top:0;border-top:none}
 .weui-cells:after{bottom:0;border-bottom:none}
 .weui-select{
   border-right: none;
+}
+.form-cell {
+  padding-left: 30rpx;
+  height: 80rpx;
 }

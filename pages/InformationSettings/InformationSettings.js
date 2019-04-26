@@ -1,95 +1,58 @@
-// pages/InformationSettings/InformationSettings.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     cities: ["武汉", "北京", "深圳"],
     citiesIndex: 0,
-    date: "请选择日期",
-    showTopTips: false
+    userBirthday: "请输入您的生日",
+    showTopTips: false,
+    city:""
 
   },
 
-  // 国家选择
-  bindCountryChange: function (e) {
+  // 地区选择
+  bindCitiesChange: function (e) {
+    var cities = this.data.cities
+    console.log(e)
     this.setData({
-      citiesIndex: e.detail.value
+      citiesIndex: e.detail.value,
+      city: cities[e.detail.value]
     })
   },
 
   // 日期选择
   bindDateChange: function (e) {
     this.setData({
-      date: e.detail.value
+      userBirthday: e.detail.value
     })
   },
 
-  showTopTips: function () {
+  fromsubmit: function (e) {
     var that = this;
-    this.setData({
-      showTopTips: true
-    });
-    setTimeout(function () {
-      that.setData({
-        showTopTips: false
-      });
-    }, 3000);
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    console.log(e)
+    // this.setData({
+    //   showTopTips: true
+    // });
+    // setTimeout(function () {
+    //   that.setData({
+    //     showTopTips: false
+    //   });
+    // }, 3000);
 
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+    var userInfo = e.detail.value
+    var reg = / \w[11]/ 
+    
+    // console.log(userInfo)
+    try{
+      wx.setStorageSync('userInfo', userInfo)
+    }catch(e){
+      console.log('用户信息存储失败')
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+  
 
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
-  },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
