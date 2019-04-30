@@ -1,41 +1,302 @@
 /* pages/order_details/order_details.wxss */
+
+
 /*地址栏样式*/
-.address{
-margin: 0 auto;
-width: 700rpx;
-height: 220rpx;
-background-color: #fff;
-margin-top: 20rpx;
-border-radius: 20rpx;
+
+.address {
+    margin: 0 auto;
+    width: 700rpx;
+    height: 220rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 20rpx;
+    position: relative;
 }
+
+
 /*地址图标*/
-.timg{
-  height: 100rpx;
-  width:101rpx;
-  margin: 60rpx 20rpx 0 20rpx;
+
+.timg {
+    height: 80rpx;
+    width: 81rpx;
+    margin: 60rpx 20rpx 0 20rpx;
 }
+
+
 /*右侧文字*/
-.txt{
-  float: right;
-  margin-right: 113rpx;
-  margin-top: 50rpx;
-  width: 550rpx;
+
+.tips {
+    color: #ff4a01;
+    position: absolute;
+    top: 165rpx;
+    font-size: 26rpx;
 }
-.tips{
-  color: red;
+
+.userName {
+    font-size: 32rpx;
+    position: absolute;
+    top: 15rpx;
 }
-.userName{
-font-size: 36rpx;
+
+.tel {
+    font-size: 28rpx;
+    color: #a4a4a4;
+    position: absolute;
+    left: 198rpx;
+    top: 22rpx;
 }
-.tel{
-  font-size: 32rpx;
-  color:#a4a4a4;
-  padding-left: 15rpx;
+
+.right {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 95rpx;
+    left: 650rpx;
 }
-.right{
-  width: 30rpx;
-  height: 30rpx;
-  float: right;
- margin-right: 20rpx;
- margin-top: 100rpx;
+
+.address_list {
+    position: absolute;
+    top: 70rpx;
+    font-size: 28rpx;
+    width: 530rpx;
+}
+
+.order_detail {
+    margin: 0 auto;
+    width: 660rpx;
+    height: auto;
+    min-height: 480rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 20rpx;
+    position: relative;
+    /* padding-left: 20rpx;
+  padding-right: 20rpx; */
+    padding: 20rpx;
+}
+
+
+/*官方旗舰店*/
+
+.shop_title {
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+
+.img_eemb {
+    width: 50rpx;
+    height: 45rpx;
+    margin: 20rpx 0rpx;
+}
+
+.eemb_shop {
+    font-size: 24rpx;
+    margin-left: 20rpx;
+}
+
+.hr {
+    width: 100%;
+    border: 1rpx solid #f4f4f4;
+}
+
+.detail_img {
+    width: 150rpx;
+    height: 150rpx;
+    border: 1rpx solid #a4a4a4;
+}
+
+.details {
+    position: relative;
+    width: 660rpx;
+    height: 150rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1px solid#f4f4f4;
+}
+
+.detail_img {
+    position: absolute;
+}
+
+.title {
+    position: absolute;
+    left: 170rpx;
+    font-size: 30rpx;
+}
+
+.detail {
+    position: absolute;
+    left: 170rpx;
+    color: #a4a4a4;
+    font-size: 28rpx;
+    margin-top: 50rpx;
+}
+
+.price {
+    position: absolute;
+    right: 0rpx;
+}
+
+.num {
+    position: absolute;
+    right: 0rpx;
+    color: #a4a4a4;
+    font-size: 24rpx;
+    margin-top: 40rpx;
+}
+
+
+/*按钮样式*/
+
+
+/*加减按钮样式*/
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* .stepper {
+    width: 170rpx;
+    height: 50rpx;
+    display: flex;
+    text-align: center;
+    float: right;
+    border: 1px solid #a5a4a4;
+    position: absolute;
+    right: 0;
+    bottom: 20rpx;
+} */
+
+.stepper {
+    width: 200rpx;
+    height: 60rpx;
+    display: flex;
+    text-align: center;
+    float: right;
+    margin-top: 90rpx;
+    border: 1px solid #a5a4a4;
+    right: 0;
+}
+
+.stepper button::after {
+    border-radius: 0;
+}
+
+.view_text_center {
+    height: 100%;
+}
+
+
+/*加入购物车弹窗的按钮样式*/
+
+.normal {
+    padding: 0;
+    color: #000;
+    line-height: 55rpx;
+    text-align: center;
+    font-size: 50rpx;
+    background: #fff;
+    border-left: 1px solid #a4a4a4;
+    border-right: 0;
+    width: 160rpx;
+    border-radius: 0;
+}
+
+.normal2 {
+    color: #000;
+    line-height: 55rpx;
+    text-align: center;
+    font-size: 50rpx;
+    background: #fff;
+    border-right: 1px solid #a4a4a4;
+    border-left: 0;
+    width: 160rpx;
+    border-radius: 0;
+    padding: 0;
+}
+
+.span1 {
+    margin-top: 20rpx;
+}
+
+.remarks {
+    color: #a4a4a4;
+    font-size: 26rpx;
+}
+
+.span2 {
+    float: right;
+    font-size: 26rpx;
+}
+
+.all_num {
+    font-size: 22rpx;
+    color: #a4a4a4;
+    margin-left: 230rpx;
+}
+
+.all_price {
+    font-size: 24rpx;
+    color: #ff4a01;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    background-color: #fff;
+    border-top: 2rpx solid #ebebeb;
+    line-height: 120rpx;
+    z-index: 2;
+}
+
+.submit {
+    float: right;
+    right: 0;
+    width: 232rpx;
+    height: 104rpx;
+    line-height: 104rpx;
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #ff5555;
+}
+
+.footer_txt {
+    margin-left: 280rpx;
+}
+
+.high {
+    height: 200rpx;
+}
+
+.remark {
+    margin: 0 auto;
+    width: 660rpx;
+    height: 160rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 20rpx;
+    position: relative;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+
+/*空地址的时候显示图片样式*/
+
+.add_img {
+    margin: 0 auto;
+    width: 700rpx;
+    height: 100rpx;
+    margin-top: 20rpx;
+    border-radius: 20rpx;
+    margin-left: 28rpx;
 }

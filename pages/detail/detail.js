@@ -77,6 +77,7 @@ Page({
 
     try {
       wx.setStorageSync('cart', list_str);
+      // console.log(list_str);
     } catch (e) {
       console.log(e);
     }
@@ -149,8 +150,14 @@ Page({
   },
   // 立即购买
   immeBuy() {
+    try{
+      wx.setStorageSync('cart', list_str);
+      console.log(list_str);
+    }catch(e){
+      console.log(e);
+    }
     wx.navigateTo({
-      url: '/pages/address/address',
+      url: '/pages/order_details/order_details',
     })
     // wx.showToast({
     //   title: '购买成功',

@@ -1,4 +1,4 @@
-
+var app = getApp()
 Page({
   data: {
     region: [],
@@ -18,20 +18,8 @@ Page({
     shippingAddress.detaileaddress = e.detail.value.detaileaddress
     shippingAddress.region = this.data.region.join(" ")
     let currentIndex = this.data.currentIndex
-    //修改缓存
-    try {
-      var addressList = wx.getStorageSync('addressList')
-      console.log(addressList)
-      if (addressList) {
-        var obj = addressList[currentIndex]
-        shippingAddress.isdefault = obj.isdefault
-
-        addressList[currentIndex] = shippingAddress
-        wx.setStorageSync("addressList", addressList)
-      }
-    } catch (e) {
-      console.log("编辑失败")
-    }
+    //把地址对象保存到缓存里
+    app.setAddress(shippingAddress, undefined, undefined, currentIndex)
     wx:wx.navigateTo({
       url: '/pages/address/address',
       success: function(res) {

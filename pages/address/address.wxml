@@ -1,12 +1,12 @@
 <view class="coutainer">
     <view class="addresslist">
         <view class="addressItem" wx:for="{{addressList}}" wx:key="{{index}}" wx:show="{{addressList.length!=0}}">
-            <view class="addressInfo">
+            <view class="addressInfo" bindtap="order_address">
                 <view class="address-cells">
                     <text class="username">{{item.nickname}}</text>
                     <text>{{item.telephone}}</text>
                 </view>
-                <text>{{item.region}}</text>
+                <text>{{item.detaileaddress}}</text>
             </view>
             <view class="edtailBtn">
                 <view class="edtailBtnLeft">
@@ -16,17 +16,17 @@
                 </view>
                 <view class="edtailBtnRight">
                     <navigator url="/pages/edtaileaddress/edtaileaddress?index={{index}}">
-                      <image  src="/assets/edtail.png"/>
-                      <text>编辑</text>
+                        <image src="/assets/edtail.png" />
+                        <text>编辑</text>
                     </navigator>
                     <text bindtap="deleteaddress" data-index="{{index}}">删除</text>
                 </view>
             </view>
         </view>
-        
+
     </view>
-    <navigator  url="/pages/addAddress/addAddress" class="addAddress">
+    <navigator url="/pages/addAddress/addAddress" class="addAddress">
         +添加收货地址
     </navigator>
 
-</view>  
+</view>

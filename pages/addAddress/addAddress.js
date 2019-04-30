@@ -1,4 +1,4 @@
-
+var app = getApp()
 Page({
   data: {
     region: ['广东省', '广州市', '海珠区'],
@@ -9,28 +9,19 @@ Page({
     })
   },
   fromsubmit(e) {
+    var that = this
     //拼接地址对象
     var useraddress = e.detail.value
     var region = this.data.region.join(" " )
     useraddress.region = region
     useraddress.isdefault = false
-    //获取缓存地址
-    try {
-      var addressList = wx.getStorageSync('addressList') || []
-      if (addressList) {
-        addressList.push(useraddress)
-        wx.setStorageSync('addressList', addressList)
-      }
-    } catch (e) {
-      console.log('添加报错')
-    }
-
-
+    //把地址对象添加到缓存里
+    app.setAddress(useraddress);
     wx.navigateTo({
       url: `/pages/address/address`,
       success: function (res) {
         // console.log(res)
       }
     })
-  }
+  },
 })

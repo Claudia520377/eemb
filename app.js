@@ -46,5 +46,48 @@ App({
       {expired: [] }
     ],
     // num:0 占时不用
+  },
+   //操作缓存地址
+   setAddress(useraddress, defaultAddressIndex, deleteaddressIndex, edtaileaddressIndex) {
+    try {
+      var addressList = wx.getStorageSync('addressList') || []
+
+      if (addressList) {
+        //添加地址对象
+        if (useraddress !== undefined && edtaileaddressIndex === undefined) {
+          addressList.push(useraddress)
+        }
+        //修改默认地址
+        if (defaultAddressIndex !== undefined) {
+          console.log(11)
+          let previous = " "
+          for (let i = 0; i < addressList.length; i++) {
+            let obj = addressList[i]
+            if (obj.isdefault) {
+              previous = i;
+            }
+            obj.isdefault = false
+          }
+          if (defaultAddressIndex !== previous) {
+            addressList[defaultAddressIndex].isdefault = !addressList[defaultAddressIndex].isdefault;
+          }
+        }
+        //删除地址
+        if (deleteaddressIndex !== undefined) {
+          addressList.splice(deleteaddressIndex, 1)
+        }
+        //修改地址
+        if (addressList !== undefined && edtaileaddressIndex !== undefined) {
+          var obj = addressList[edtaileaddressIndex]
+          useraddress.isdefault = obj.isdefault
+
+          addressList[edtaileaddressIndex] = useraddress
+        }
+
+        wx.setStorageSync('addressList', addressList)
+      }
+    } catch (e) {
+      console.log('添加报错')
+    }
   }
 })

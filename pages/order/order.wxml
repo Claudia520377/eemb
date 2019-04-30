@@ -4,38 +4,38 @@
     <!-- scroll-with-animation滚动添加动画过渡 -->
     <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
         <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
-        </block>        
+            <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+        </block>
     </scroll-view>
     <!-- 页面内容 -->
-    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
         <swiper-item wx:for="{{navData}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
-          <!-- <view>{{tabItem.orderDetails}}</view> -->
+            <!-- <view>{{tabItem.orderDetails}}</view> -->
             <view class='orderbox'>
-              <view class='orderDetails' wx:for="{{tabItem.orderDetails}}" wx:key="item.index">
-                <view class=' orderListTitle'>
-                  <view>订单号:{{item.OrderID}}</view>
-                  <view>{{tabItem.text}}</view>
+                <view class='orderDetails' wx:for="{{tabItem.orderDetails}}" wx:key="item.index">
+                    <view class=' orderListTitle'>
+                        <view>订单号:{{item.OrderID}}</view>
+                        <view>{{tabItem.text}}</view>
+                    </view>
+                    <view class='orderListDetails'>
+                        <view class='ListDetails'>
+                            <image src='{{item.img}}'></image>
+                            <text class='orderListmodel'>{{item.model}}</text>
+                        </view>
+                        <view class="orderlistprice">
+                            <text class='price'>￥{{item.price}}</text>
+                            <text class='num'>*{{item.num}}</text>
+                        </view>
+                    </view>
+                    <view class='orderlistcountprice'>
+                        <text>实付</text>
+                        <text class='finallprice'>￥{{item.finallprice}}</text>
+                    </view>
+                    <view class='handle' wx:if="{{tabItem.text==='全部'  || tabItem.text==='待付款' }}">
+                        <view class='deletebtn' bindtap="cancelbtn" data-index="{{index}}" data-oderdetailer="{{item}}">取消订单</view>
+                        <view class='paybtn' bindtap="paybtn">支付订单</view>
+                    </view>
                 </view>
-                <view class='orderListDetails'>
-                  <view class='ListDetails'>
-                    <image src='{{item.img}}'></image>
-                    <text class='orderListmodel'>{{item.model}}</text>
-                  </view>
-                  <view class="orderlistprice">
-                    <text class='price'>￥{{item.price}}</text>
-                    <text class='num'>*{{item.num}}</text>
-                  </view>
-                </view>
-                <view class='orderlistcountprice'>
-                  <text>实付</text>
-                  <text class='finallprice'>￥{{item.finallprice}}</text>
-                </view>
-                <view class='handle' wx:if="{{tabItem.text==='全部'  || tabItem.text==='代付款' }}">
-                  <view class='deletebtn' bindtap="cancelbtn" data-index="{{index}}" data-oderdetailer="{{item}}">取消订单</view>
-                  <view class='paybtn' bindtap="paybtn"  >支付订单</view>
-                </view>
-              </view>
             </view>
         </swiper-item>
     </swiper>

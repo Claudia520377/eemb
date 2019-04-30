@@ -1,6 +1,6 @@
 <!--pages/data/data.wxml-->
 <view class='page'>
-<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">修改成功</view>
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tipes}}</view>
   <form bindsubmit="fromsubmit">
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
@@ -30,13 +30,13 @@
               </picker>
           </view>
       </view>
-      <view class="weui-cell weui-cell_select">
-          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
               <view class="weui-label">所在城市</view>
           </view>
           <view class="weui-cell__bd">
               <picker bindchange="bindCitiesChange" value="{{city}}" range="{{cities}}">
-                  <input class="weui-select weui-select_in-select-after" name="userCity" value='{{city}}'></input>
+                  <input class="weui-input" name="userCity" value='{{city}}'></input>
               </picker>
           </view>
       </view>

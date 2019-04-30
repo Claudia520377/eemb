@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/order_details/order_details",
     "pages/index/index",
+    "pages/order_details/order_details",
     "pages/cart/cart",
     "pages/detail/detail",
     "pages/profile/profile",
@@ -19,7 +19,6 @@
     "pages/InformationSettings/InformationSettings",
     "pages/addAddress/addAddress",
     "pages/edtaileaddress/edtaileaddress"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

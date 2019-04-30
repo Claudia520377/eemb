@@ -1,10 +1,54 @@
 <!--pages/order_details/order_details.wxml-->
-<view class="address">
-  <image class='timg' src='/assets/timg.png'></image>
- 
-  <text class='userName'>张三</text>
-  <text class='tel'>13144556671\n</text>
-  <text class='address_list'>湖北省武汉市雄楚大道xxxx\n</text>
-  <text class='tips'>收货不便时，可选择免费代收货服务</text>
-     <image class='right' src='http://eemb.cn/assets/tabs/right.png'></image>
+<view class="address" bindtap='img_url' wx:if="{{ isdefault != fasle }}">
+
+    <view>
+        <image class='timg' src='/assets/timg.png'></image>
+        <text class='userName'>{{isdefault.nickname}}</text>
+        <text class='tel'>{{isdefault.telephone}}\n</text>
+        <text class='address_list'>{{isdefault.region}}{{isdefault.detaileaddress}}\n</text>
+        <text class='tips'>收货不便时，可选择免费代收货服务</text>
+        <image class='right' src='http://eemb.cn/assets/tabs/right.png'></image>
+    </view>
+</view>
+<view wx:else bindtap='img_url'>
+    <image class="add_img" src="/assets/address.png" />
+</view>
+<view class='order_detail'>
+    <view class='shop_title'>
+        <image class="img_eemb" src="http://eemb.cn/assets/images/eemb.jpg" />
+        <text class="eemb_shop">EEMB众能动力</text>
+    </view>
+    <view class='hr'></view>
+    <view class='details' wx:for="{{list}}" wx:key="{{index}}">
+        <image class='detail_img' src='{{item.image}}' bindtap="jump_detail" />
+
+        <text class='title'>{{item.title}}</text>
+        <text class='detail'>{{item.detail}}</text>
+        <text class='price'>￥{{item.price}}</text>
+        <!-- <text class='num'>x{{item.num}}</text> -->
+        <view class="stepper">
+            <!--减按钮  -->
+            <button class="normal2" data-obj="{{obj}}" data-index="{{index}}" bindtap="btn_minus">-</button>
+            <!-- 文本框值 -->
+            <input class="view_text_center" bindinput='input_num' data-index="{{index}}" value="{{item.num}}" />
+            <button class="normal" bindtap="btn_add" data-index="{{index}}">+</button>
+        </view>
+    </view>
+</view>
+<view class="remark">
+    <view class='span1'>
+        订单备注：<input type='text' class='remarks' value='选填，请先和商家协商一致' />
+    </view>
+    <view class='span2'>
+        <text class='all_num'>共{{shopcarcount}}件</text> 小计：
+        <text class='all_price'>￥{{totalPrice}}</text>
+    </view>
+</view>
+
+<view class="high">
+
+</view>
+<view class='footer'>
+    <text class='footer_txt'>需付：<text class='all_price'>￥{{totalPrice}}</text></text>
+    <label class='submit' bindtap="btn_submit">立即支付</label>
 </view>

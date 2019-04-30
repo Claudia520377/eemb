@@ -278,7 +278,9 @@ Page({
   btn_submit_order: function () {
     var that = this;
     // console.log(that.data.totalPrice);
-
+wx.navigateTo({
+  url: '../order_details/order_details',
+})
     // 调起支付
     // wx.requestPayment(
     //   {
@@ -291,10 +293,10 @@ Page({
     //     'fail': function (res) { },
     //     'complete': function (res) { }
     //   })
-    wx.showModal({
-      title: '提示',
-      content: '合计金额-' + that.data.totalPrice + "暂未开发",
-    })
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '合计金额-' + that.data.totalPrice + "暂未开发",
+    // })
   },
   // 收藏
   btn_collert: function () {
