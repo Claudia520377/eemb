@@ -6,7 +6,7 @@
 .weui-select{
   border-right: none;
 }
-.form-cell {
-  padding-left: 30rpx;
-  height: 80rpx;
+.weui-cells{
+  font-size: 28rpx;
+  line-height: 50px;
 }

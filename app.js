@@ -47,8 +47,8 @@ App({
     ],
     // num:0 占时不用
   },
-   //操作缓存地址
-   setAddress(useraddress, defaultAddressIndex, deleteaddressIndex, edtaileaddressIndex) {
+  //操作缓存地址
+  setAddress(useraddress, defaultAddressIndex, deleteaddressIndex, edtaileaddressIndex) {
     try {
       var addressList = wx.getStorageSync('addressList') || []
 
@@ -89,5 +89,28 @@ App({
     } catch (e) {
       console.log('添加报错')
     }
-  }
+  },
+  //错误提示
+  showtips(that, tipes) {
+    that.setData({
+      showTopTips: true,
+      tipes: tipes
+    });
+    setTimeout(function () {
+      that.setData({
+        showTopTips: false,
+        tipes: ""
+      });
+    }, 1000);
+
+  },
+  //成功提示
+  showToast(text, type) {
+    wx.showToast({
+      title: "保存成功",
+      icon: "success",
+      duration: 2000
+    });
+
+  },
 })

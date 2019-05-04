@@ -65,7 +65,7 @@
     margin: 0 auto;
     width: 660rpx;
     height: auto;
-    min-height: 480rpx;
+    min-height: 315rpx;
     background-color: #fff;
     margin-top: 20rpx;
     border-radius: 20rpx;

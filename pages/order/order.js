@@ -123,7 +123,7 @@ Page({
         }
     },
     switchTab(event) {
-        console.log(event);
+        //console.log(event);
         var cur = event.detail.current;
         var singleNavWidth = this.data.windowWidth / 5;
         this.setData({
@@ -151,6 +151,6 @@ Page({
         // console.log(navData)
     },
     paybtn: function(option) {
-        console.log(option)
+        //console.log(option)
     }
 })

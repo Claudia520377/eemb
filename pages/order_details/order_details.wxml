@@ -1,15 +1,14 @@
 <!--pages/order_details/order_details.wxml-->
-<view class="address" bindtap='img_url' wx:if="{{ isdefault != fasle }}">
+<view class="address" bindtap='img_url' wx:if="{{ isdefault==false?false: true}}">
 
-    <view>
-        <image class='timg' src='/assets/timg.png'></image>
-        <text class='userName'>{{isdefault.nickname}}</text>
-        <text class='tel'>{{isdefault.telephone}}\n</text>
-        <text class='address_list'>{{isdefault.region}}{{isdefault.detaileaddress}}\n</text>
-        <text class='tips'>收货不便时，可选择免费代收货服务</text>
-        <image class='right' src='http://eemb.cn/assets/tabs/right.png'></image>
-    </view>
+    <image class='timg' src='/assets/timg.png'></image>
+    <text class='userName'>{{isdefault.nickname}}</text>
+    <text class='tel'>{{isdefault.telephone}}\n</text>
+    <text class='address_list'>{{isdefault.region}}{{isdefault.detaileaddress}}\n</text>
+    <text class='tips'>收货不便时，可选择免费代收货服务</text>
+    <image class='right' src='http://eemb.cn/assets/tabs/right.png'></image>
 </view>
+
 <view wx:else bindtap='img_url'>
     <image class="add_img" src="/assets/address.png" />
 </view>
@@ -30,7 +29,8 @@
             <!--减按钮  -->
             <button class="normal2" data-obj="{{obj}}" data-index="{{index}}" bindtap="btn_minus">-</button>
             <!-- 文本框值 -->
-            <input class="view_text_center" bindinput='input_num' data-index="{{index}}" value="{{item.num}}" />
+            <input class="view_text_center" type="number" data-index="{{index}}" bindblur="bindManual" data-iname='input1' value="{{item.num}}" />
+
             <button class="normal" bindtap="btn_add" data-index="{{index}}">+</button>
         </view>
     </view>

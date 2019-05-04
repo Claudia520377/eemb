@@ -1,4 +1,29 @@
-<!--pages/favorite/favorite.wxml-->
+
+<view class='footprintlist'>
+  <navigator url="{{item.src}}"  hover-class="weui-cell_active" class='footprintitem' wx:for="{{footprintList}}" wx:key="{{index}}">
+    <view class="weui-cell weui-cell_access" >
+      <view class="weui-cell__hd">
+          <image src="{{item.shoplogo}}" class='shoplogo'></image>
+      </view>
+      <view class="weui-cell__bd">{{item.shopName}}</view>
+      <view class="weui-cell__ft">{{item.time}}</view>
+    </view>
+    <view class='itemlist'>
+      <image src='{{item.img}}'></image>
+      <view class='dedaile'>
+        <text class='title'>{{item.title}}</text>
+        <!-- <view>
+          <text class='model'>通过安全保护功能提高安全性</text>
+          <text class='model'>通过安全保护功能提高安全性</text>
+          <text class='model'>通过安全保护功能提高安全性</text>
+        </view> -->
+        <text class='price'>￥{{item.price}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+
 
 <view class='nomorebox clearfix'>
   <view class='nomoreline nomorelineleft'></view>

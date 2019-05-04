@@ -75,7 +75,7 @@ page {
 
 /* 空div */
 .line-width30{
-  height: 20rpx;
+  height: 10rpx;
   width: 750rpx;
 }
 .line-width50{

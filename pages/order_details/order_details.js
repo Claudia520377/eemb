@@ -35,34 +35,36 @@ Page({
             //获取数量
             var num = 0;
             var list_str = wx.getStorageSync('cart')
-                // console.log(list_str);
+                //console.log(list_str);
             list_str.forEach(list_str => {
                 num = num + list_str.num;
             });
             // //获取地址信息
-            var data = wx.getStorageSync('addressList')
-            console.log(data);
+            var data = wx.getStorageSync('addressList') || [];
+            //console.log(data);
 
 
-            console.log(num);
+            //console.log(num);
             // 同步接口立即返回值
             // 重新渲染数据
         } catch (e) {
             console.log('读取key发生错误')
         }
-        console.log(data)
+        //console.log(data)
         data.forEach(function(element) {
             if (element.isdefault == true) {
-                console.log(element);
+                //console.log(element);
                 that.setData({
                     isdefault: element
                 })
             }
         });
-        console.log(this.data);
+
+
+        //console.log(this.data);
         try {
             wx.setStorageSync('cart', list_str);
-            console.log(list_str);
+            //console.log(list_str);
             this.setData({
                 // addressList: data,
                 shopcarcount: num,
@@ -259,5 +261,42 @@ Page({
                 // complete
             }
         })
-    }
+    },
+    //购物车input框
+    bindManual: function(e) {
+        var iname = e.target.dataset.iname;
+        iname = parseInt(e.detail.value);
+
+        var id = e.currentTarget.dataset.index;
+        //console.log(id);
+        var cart = wx.getStorageSync('cart') || [];
+        if (cart) {
+            for (var i = 0; i < cart.length; i++) {
+                var cartObj = cart[i];
+                //console.log(cartObj);
+                if (cartObj.cid == id + 1) {
+                    cartObj.num = iname;
+                }
+            }
+        }
+        //所有商品的数量
+        var all_num = 0;
+        // // 循环列表得到每个数据
+        for (var i = 0; i < cart.length; i++) {
+            all_num += cart[i].num;
+        }
+        try {
+            wx.setStorageSync('cart', cart);
+
+        } catch (e) {
+            console.log('读取key发生错误')
+        }
+        // 重新渲染 ---显示新的数量
+        this.setData({
+            shopcarcount: all_num,
+            list: cart
+        });
+        // 计算金额方法
+        this.count_price();
+    },
 })

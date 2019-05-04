@@ -6,7 +6,7 @@
     background-color: #fff;
     padding-left: 30rpx;
     padding-right: 20rpx;
-    box-shadow: 0rpx 10rpx 10rpx #d9d9d9;
+    box-shadow: 10rpx 10rpx 10rpx #ddd;
 }
 .addressInfo >text{
   height: 40rpx;
